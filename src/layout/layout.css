@@ -1,0 +1,197 @@
+.ipt1 {
+  padding: 8px;
+  font-size: 14px;
+  
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px rgba(66, 66, 66, 0.75);
+  width: 268px;
+}
+.ipt1:focus {
+  outline: none;
+}
+.txt:focus {
+  outline: none;
+}
+
+*{
+  font-family:'Calling code', Courier, monospace;
+}
+
+.txt {
+  width: 262px;
+  padding: 11px;
+  font-size: 14px;
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px rgba(66, 66, 66, 0.75);
+}
+.addbtn {
+  display: flex;
+  margin-left: 202px;
+  margin-top: 5px;
+}
+
+.chanBtn {
+  display: flex;
+  margin-left: 310px;
+  margin-top: -6px;
+  height: 25px;
+  width: 60px;
+  padding-top: 1.5px;
+  background: orange;
+  border-style: solid;
+  border-color:orange;
+  border-radius: 5px;
+  color: #fff;
+}
+.canBtn {
+  display: flex;
+  margin-left: 5px;
+  margin-top: -6px;
+  height: 25px;
+  width: 60px;
+  color: #fff;
+  padding-top: 1.5px;
+  background: rgb(216, 61, 61);
+  border-color:rgb(216, 61, 61);
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.div {
+  display: flex;
+  margin-left: 50px;
+}
+.span2 {
+  width: 60%;
+  background: #fff;
+  text-align: left;
+}
+.span1 {
+  width: 40%;
+  background: #fff;
+  text-align: left;
+}
+.label1 {
+  display: flex;
+  width: 350px;
+}
+.label2 {
+  display: flex;
+  justify-self: start;
+}
+.searchipt{
+  width: 200px;
+  margin-top: 10px;
+  padding: 4px;
+  font-size: 14px;
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px rgba(66, 66, 66, 0.75);
+}
+.searchipt:focus{
+    outline: none;
+}
+
+.searchbtn{
+  margin-left: 10px;
+  width:105px;
+  padding-bottom: 3px;
+  height: 28px;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 10px;
+  border: #3498db;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+}
+.searchbtn:hover{
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.addbtn{
+  background: #1003c2;
+  background-image: -webkit-linear-gradient(top, #1003c2, #6505e4);
+  background-image: -moz-linear-gradient(top,  #1003c2, #6505e4);
+  background-image: -ms-linear-gradient(top,  #1003c2, #6505e4);
+  background-image: -o-linear-gradient(top,  #1003c2, #6505e4);
+  background-image: linear-gradient(to bottom, #1003c2, #6505e4);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 5px;
+  border: #1003c2;
+  color: #fff;
+  font-size: 16px;
+  width: 130px;
+  height: 25px;
+  text-decoration:none;
+  display: block;
+  text-align: center;
+  margin-left: 155px;
+}
+
+.addbtn:hover{
+  background: #9191d8;
+  background-image: -webkit-linear-gradient(top, #9191d8, #6505e4);
+  background-image: -moz-linear-gradient(top,#9191d8, #6505e4);
+  background-image: -ms-linear-gradient(top, #9191d8, #6505e4);
+  background-image: -o-linear-gradient(top, #9191d8, #6505e4);
+  background-image: linear-gradient(to bottom, #9191d8, #6505e4);
+  text-decoration: none;
+}
+
+.modal{
+  display: block;
+}
+.mtxt{
+  width: 270px;
+  margin-top: -10px;
+}
+.mtxt:focus{
+  outline: none;
+}
+.confirmbtn{
+  margin-left: 130px;
+  width: 70px;
+  background-color: #06a513;
+  border-color:#06a513;
+  border-style: solid;
+  border-radius: 5px;
+  color: #fff;
+}
+.can{
+  margin-left: 5px;
+  width: 70px;
+  background-color:  rgb(216, 61, 61);
+  border-color:rgb(216, 61, 61);
+  border-style: solid;
+  border-radius: 5px;
+  color: #fff;
+}
