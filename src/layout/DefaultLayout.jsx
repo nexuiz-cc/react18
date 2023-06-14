@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
 import React from 'react';
-import './layout.css';
+import './layout.scss';
 
 let id = 0;
 // eslint-disable-next-line no-unused-vars
@@ -109,7 +109,7 @@ function DefaultLayouts(props) {
           {searchList.map((item) => (
             <li key={item.id}>
               <span>{item.nikename}</span>
-              --
+              :
               <i>{item.content}</i>
             </li>
           ))}
