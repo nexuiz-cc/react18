@@ -1,3 +1,6 @@
+
+@use "public";
+
 ipt {
   border-width: 1px;
   border-color: #cccccc;
@@ -51,26 +54,14 @@ btn {
   color: #fff;
 }
 
-@mixin btn ($color) {
-  display: flex;
-  height: 25px;
-  width: 60px;
-  padding-top: 1.5px;
-  border-style: solid;
-  border-radius: 5px;
-  color: #fff;
-  border-color: $color;
-  background: $color;
-}
-
 .chanBtn {
   margin-left: 310px;
   margin-top: -6px;
-  @include btn(orange);
+  @include public.btn(orange);
 }
 
 .canBtn {
-  @include btn(red);
+  @include public.btn(red);
   margin-left: 5px;
   margin-top: -6px;
 }
@@ -194,19 +185,10 @@ span {
 }
 
 .confirmbtn {
-  @include commonBtn(#06a513, 130px, 70px);
+  @include public.commonBtn(#06a513, 130px, 70px);
 }
 
 .can {
-  @include commonBtn(red, 5px, 70px);
+  @include public.commonBtn(red, 5px, 70px);
 }
 
-@mixin commonBtn($color, $leftpx, $width) {
-  margin-left: $leftpx;
-  width: $width;
-  background-color: $color;
-  border-color: $color;
-  border-style: solid;
-  border-radius: 5px;
-  color: #fff;
-}
