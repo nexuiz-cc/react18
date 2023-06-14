@@ -51,21 +51,27 @@ btn {
   color: #fff;
 }
 
+@mixin btn ($color){  
+  display: flex;
+  height: 25px;
+  width: 60px;
+  padding-top: 1.5px;
+  border-style: solid;
+  border-radius: 5px;
+  color: #fff;
+  border-color:$color;
+  background: $color;
+}
 .chanBtn {
-  @extend btn;
   margin-left: 310px;
   margin-top: -6px;
-  border-color: orange;
-  background: orange;
+  @include btn(orange);
 }
 
 .canBtn {
-  @extend btn;
+  @include btn(red);
   margin-left: 5px;
   margin-top: -6px;
-  background: rgb(216, 61, 61);
-  border-color: rgb(216, 61, 61);
-
 }
 
 .div {
