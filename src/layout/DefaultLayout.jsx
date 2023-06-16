@@ -47,14 +47,9 @@ function DefaultLayouts(props) {
 
   const check = () => {
     const tmpArr = [...list];
-    // tmpArr[now].content = checkContent;
     tmpArr.splice(now, 1, { ...list[now], content: checkContent });
     setList(tmpArr);
     setIsCheckFrame(false);
-
-    // list[now].content = checkContent;
-    // setList(list);
-    // setIsCheckFrame(false);
   };
 
   return (

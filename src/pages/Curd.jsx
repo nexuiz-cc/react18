@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Table, Input, Button, Space, Modal } from "antd";
+import { Table, Input, Button, Space, Modal, Form } from "antd";
 const { TextArea } = Input;
 
 let id = 2;
@@ -17,14 +17,15 @@ const Curd = (props) => {
     },
   ]);
 
-  const [nikename, setNikename] = useState("");
-  const [content, setContent] = useState("");
+  // const [nikename, setNikename] = useState("");
+  // const [content, setContent] = useState("");
   const [searchIpt, setSearchIpt] = useState("");
   const [searchList, setSearchList] = useState([]);
 
   const [isCheckFrame, setIsCheckFrame] = useState(false); //modal
   const [now, setNow] = useState(0); //list数据里面要被修改的索引
   const [checkContent, setCheckContent] = useState(""); //修改是的输入框
+  const [form] = Form.useForm();
 
   const columns = [
     {
@@ -56,7 +57,7 @@ const Curd = (props) => {
       ),
       render: (text, record, index) => (
         <Space>
-          <Button type="primary" warning onClick={() => select(index)}>
+          <Button type="primary" onClick={() => select(index)}>
             改
           </Button>
           <Button
@@ -71,11 +72,11 @@ const Curd = (props) => {
     },
   ];
 
-  const add = () => {
+  const add = ({ nikename, content,event }) => {
     id++;
     setList([...list, { nikename, content, id }]);
-    setNikename("");
-    setContent("");
+    form.setFieldsValue({ nikename: '' });
+    form.setFieldsValue({ content: '' });
   };
 
   const remove = (index, id) => {
@@ -107,25 +108,56 @@ const Curd = (props) => {
     setIsCheckFrame(false);
   };
 
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+
   return (
     <>
       <h3>TO-DO-LIST|curd</h3>
       <Space direction="vertical" size="middle" style={{ display: "flex" }}>
-        <Input
-          placeholder="输入昵称"
-          value={nikename}
-          onChange={(ev) => setNikename(ev.target.value)}
-        />
-        <TextArea
-          rows={4}
-          value={content}
-          onChange={(ev) => setContent(ev.target.value)}
-        ></TextArea>
-        <Button type="primary" onClick={add}>
-          增
-        </Button>
+        <Form
+          form={form}
+          preserve={true}
+          onFinish={add}
+          onFinishFailed={onFinishFailed}
+        >
+          <Form.Item
+            label="昵称"
+            name="nikename"
+            
+            rules={[
+              {
+                required: true,
+                message: "昵称为必传参数",
+              },
+            ]}
+          >
+            <Input placeholder="输入昵称" />
+          </Form.Item>
+          <Form.Item
+            label="内容"
+            name="content"
+            rules={[
+              {
+                required: true,
+                min: 15,
+              },
+            ]}
+          >
+            <TextArea rows={4}></TextArea>
+          </Form.Item>
 
-        <Table dataSource={list} columns={columns} />
+          <Button type="primary" htmlType="submit">
+            增
+          </Button>
+        </Form>
+
+        <Table
+          dataSource={list}
+          columns={columns}
+          rowKey={(record) => record.id}
+        />
       </Space>
 
       <ul>
@@ -137,19 +169,20 @@ const Curd = (props) => {
           </li>
         ))}
       </ul>
-
-      <Modal
-        title={`正在修改${list[now].nikename}的留言`}
-        open={isCheckFrame}
-        onOk={check}
-        onCancel={() => setIsCheckFrame(false)}
-      >
-        <TextArea
-          rows={4}
-          value={checkContent}
-          onChange={(ev) => setCheckContent(ev.target.value)}
-        ></TextArea>
-      </Modal>
+      {isCheckFrame && (
+        <Modal
+          title={`正在修改${list[now].nikename}的留言`}
+          open={isCheckFrame}
+          onOk={check}
+          onCancel={() => setIsCheckFrame(false)}
+        >
+          <TextArea
+            rows={4}
+            value={checkContent}
+            onChange={(ev) => setCheckContent(ev.target.value)}
+          ></TextArea>
+        </Modal>
+      )}
     </>
   );
 };
