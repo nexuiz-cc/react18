@@ -1,7 +1,7 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
 import React from 'react';
 import './layout.scss';
+import { createPortal } from 'react-dom';
 
 let id = 0;
 // eslint-disable-next-line no-unused-vars
@@ -63,7 +63,7 @@ function DefaultLayouts(props) {
         <h3>Adding Comment Area</h3>
         <input
           type="text"
-          class="ipt1"
+          className="ipt1"
           placeholder="nickname"
           value={nikename}
           onChange={(ev) => setNikename(ev.target.value)}
@@ -72,39 +72,39 @@ function DefaultLayouts(props) {
         <textarea
           value={content}
           placeholder="Content"
-          class="txt"
+          className="txt"
           onChange={(ev) => setContent(ev.target.value)}
           cols="30"
           rows="10"
         />
         <br />
-        <button type="button" class="addbtn" onClick={add}>Add Comment</button>
+        <button type="button" className="addbtn" onClick={add}>Add Comment</button>
       </span>
-      <span class="span2">
+      <span className="span2">
         <h3>CURD Comment Area</h3>
-        <div class="list">
+        <div className="list">
           {list.length === 0 && <p>No Data</p>}
           {list.map((item, index) => (
             <div key={item.id}>
-              <span class="label1">
+              <span className="label1">
                 {item.nikename}
                 :
               </span>
-              <span class="label2">
+              <span className="label2">
                 <i>{item.content}</i>
-                <button type="button" class="chanBtn" onClick={() => select(index)}>Change</button>
-                <button type="button" class="canBtn" onClick={() => remove(index, item.id)}>Delete</button>
+                <button type="button" className="chanBtn" onClick={() => select(index)}>Change</button>
+                <button type="button" className="canBtn" onClick={() => remove(index, item.id)}>Delete</button>
               </span>
             </div>
           ))}
         </div>
         <input
           type="text"
-          class="searchipt"
+          className="searchipt"
           value={searchIpt}
           onChange={(ev) => setSearchIpt(ev.target.value)}
         />
-        <button type="button" class="searchbtn" onClick={search}>Search</button>
+        <button type="button" className="searchbtn" onClick={search}>Search</button>
         <ul>
           {searchList.map((item) => (
             <li key={item.id}>
@@ -115,24 +115,28 @@ function DefaultLayouts(props) {
           ))}
         </ul>
         {isCheckFrame && (
-        <div>
-          <h4>
-            You are changing&nbsp;
-            {list[now].nikename}
-            &apos;&ensp;s commemt.
-          </h4>
-          <textarea
-            class="mtxt"
-            value={checkContent}
-            onChange={(ev) => setCheckContent(ev.target.value)}
-            cols="30"
-            rows="10"
-          />
-          <div class="modal">
-            <button type="button" class="confirmbtn" onClick={check}>Confirm</button>
-            <button type="button" class="can" onClick={() => setIsCheckFrame(false)}>Cancel</button>
-          </div>
-        </div>
+          createPortal(
+            <div>
+            <h4>
+              You are changing&nbsp;
+              {list[now].nikename}
+              &apos;&ensp;s commemt.
+            </h4>
+            <textarea
+              className="mtxt"
+              value={checkContent}
+              onChange={(ev) => setCheckContent(ev.target.value)}
+              cols="30"
+              rows="10"
+            />
+            <div className="modal">
+              <button type="button" className="confirmbtn" onClick={check}>Confirm</button>
+              <button type="button" className="can" onClick={() => setIsCheckFrame(false)}>Cancel</button>
+            </div>
+          </div>,
+          document.body
+          )
+       
         )}
       </span>
     </div>
