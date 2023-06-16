@@ -1,15 +1,9 @@
-import { Button, DatePicker } from "antd";
-
+import Curd from "../pages/Curd";
 const BaseLayouts = ({ children }) => {
-  const onChange = (date, dateString) => {
-    console.log(date, dateString);
-  };
-
   return (
     <>
-      <h3>antd</h3>
-      <Button type="primary">Primary Button</Button>
-      <DatePicker onChange={onChange} />
+      <h3>antd-table-modal</h3>
+      <Curd></Curd>
     </>
   );
 };
