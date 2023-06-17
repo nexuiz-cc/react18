@@ -1,0 +1,43 @@
+
+
+table.gry {
+  width: 900px;
+  border-collapse: collapse;
+}
+table.gry td {
+  border-top: 0.5px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  background-color: #fff;
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  padding-top: 5px;
+  height: 55px;
+}
+table.gry tr {
+  background-color: #fff;
+  display: flex;
+
+}
+
+table.gry th {
+  border-top:1px solid #000000;
+  border-bottom: 0.5px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  background-color: #cfcfcf;
+  display: flex;
+  width: 200px;
+  justify-content: center;
+}
+
+.confirmbtn{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 300px;
+    width: 200px;
+    justify-content: center;
+}
+
