@@ -28,7 +28,10 @@ const Curd = (props) => {
 
   const [isCheckFrame, setIsCheckFrame] = useState(false); //modal
   const [now, setNow] = useState(0); //list数据里面要被修改的索引
-  const [checkContent, setCheckContent] = useState(''); //修改是的输入框
+  const [checkName, setCheckName] = useState(''); 
+  const [checkCountry, setCheckCountry] = useState(''); 
+  const [checkTel, setCheckTel] = useState(''); 
+  const [checkAddress, setCheckAddress] = useState(''); 
   const [form] = Form.useForm();
   let id =2;
   const columns = [
@@ -122,12 +125,15 @@ const Curd = (props) => {
   const select = (index) => {
     setIsCheckFrame(true);
     setNow(index);
-    setCheckContent(list[index].content);
+    setCheckName(list[index].name);
+    setCheckCountry(list[index].country);
+    setCheckTel(list[index].tel);
+    setCheckAddress(list[index].address);
   };
 
   const check = () => {
     let tmpArr = [...list];
-    tmpArr.splice(now, 1, { ...list[now], content: checkContent });
+    tmpArr.splice(now, 1, { ...list[now], name: checkName,country:checkCountry,tel:checkTel,address:checkAddress });
     setList(tmpArr);
     setIsCheckFrame(false);
   };
@@ -203,14 +209,34 @@ const Curd = (props) => {
         <Modal
           title={`正在修改 ${list[now].name} 的留言`}
           open={isCheckFrame}
+          okButtonProps={{ className: 'okbtn' }}
           onCancel={() => setIsCheckFrame(false)}
           onOk={check}
         >
-          <TextArea
+          <table>
+            <tr>
+              <td>&nbsp;Name</td>
+              <td>&nbsp;Country</td>
+            </tr>
+            <tr>
+              <td><input type="text" className='modalIpt' onChange={(ev) => setCheckName(ev.target.value)} placeholder={checkName}/></td>
+              <td><input type="text" className='modalIpt' onChange={(ev) => setCheckCountry(ev.target.value)} placeholder={checkCountry}/></td>
+            </tr>
+            <tr>
+              <td>&nbsp;Phone Number</td>
+              <td>&nbsp;Address</td>
+            </tr>
+            <tr>
+            <td><input type="text" className='modalIpt' onChange={(ev) => setCheckTel(ev.target.value)} placeholder={checkTel}/></td>
+              <td><input type="text" className='modalIpt' onChange={(ev) => setCheckAddress(ev.target.value)} placeholder={checkAddress}/></td>
+            </tr>
+          </table>
+
+          {/* <TextArea
             rows={4}
             value={checkContent}
             onChange={(ev) => setCheckContent(ev.target.value)}
-          ></TextArea>
+          ></TextArea> */}
         </Modal>
       )}
     </>
