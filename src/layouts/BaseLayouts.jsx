@@ -1,10 +1,11 @@
 import React from "react";
 import Curd from "../pages/Curd";
+import Temp from "../pages/Temp"
 const BaseLayouts = ({ children }) => {
   return (
     <>
       <h3>antd-table-modal</h3>
-      <Curd></Curd>
+      <Temp></Temp>
     </>
   );
 };
