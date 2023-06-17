@@ -1,3 +1,4 @@
+import React from "react";
 import { createRoot } from "react-dom/client";
 import AntdConfig from "./AntdConfig/AntdConfig";
 import BaseLayouts from "./layouts/BaseLayouts";

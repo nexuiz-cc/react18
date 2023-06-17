@@ -1,3 +1,4 @@
+import React from "react";
 import Curd from "../pages/Curd";
 const BaseLayouts = ({ children }) => {
   return (
