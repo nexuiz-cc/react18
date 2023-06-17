@@ -1,6 +1,8 @@
+import React from "react";
 import { useState } from "react";
 import { Table, Input, Button, Space, Modal, Form } from "antd";
 const { TextArea } = Input;
+
 
 let id = 2;
 const Curd = (props) => {
