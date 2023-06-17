@@ -1,47 +1,46 @@
-import React from "react";
-import { useState } from "react";
-import { Table, Input, Button, Space, Modal, Form } from "antd";
+import { useState } from 'react';
+import { Table, Input, Button, Space, Modal, Form } from 'antd';
 const { TextArea } = Input;
-
+import React from 'react';
 
 let id = 2;
 const Curd = (props) => {
   const [list, setList] = useState([
     {
       id: 1,
-      nikename: "胡彦斌",
-      content: "西湖区湖底公园1号",
+      nikename: '胡彦斌',
+      content: '西湖区湖底公园1号',
     },
     {
       id: 2,
-      nikename: "吴彦祖",
-      content: "西湖区湖底公园2号",
+      nikename: '吴彦祖',
+      content: '西湖区湖底公园2号',
     },
   ]);
 
   // const [nikename, setNikename] = useState("");
   // const [content, setContent] = useState("");
-  const [searchIpt, setSearchIpt] = useState("");
+  const [searchIpt, setSearchIpt] = useState('');
   const [searchList, setSearchList] = useState([]);
 
   const [isCheckFrame, setIsCheckFrame] = useState(false); //modal
   const [now, setNow] = useState(0); //list数据里面要被修改的索引
-  const [checkContent, setCheckContent] = useState(""); //修改是的输入框
+  const [checkContent, setCheckContent] = useState(''); //修改是的输入框
   const [form] = Form.useForm();
 
   const columns = [
     {
-      title: "艾迪",
-      dataIndex: "id",
-      key: "name",
+      title: '艾迪',
+      dataIndex: 'id',
+      key: 'name',
     },
     {
-      title: "昵称",
-      dataIndex: "nikename",
+      title: '昵称',
+      dataIndex: 'nikename',
     },
     {
-      title: "内容",
-      dataIndex: "content",
+      title: '内容',
+      dataIndex: 'content',
     },
     {
       title: () => (
@@ -74,7 +73,7 @@ const Curd = (props) => {
     },
   ];
 
-  const add = ({ nikename, content,event }) => {
+  const add = ({ nikename, content, event }) => {
     id++;
     setList([...list, { nikename, content, id }]);
     form.setFieldsValue({ nikename: '' });
@@ -111,13 +110,13 @@ const Curd = (props) => {
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    console.log('Failed:', errorInfo);
   };
 
   return (
     <>
       <h3>TO-DO-LIST|curd</h3>
-      <Space direction="vertical" size="middle" style={{ display: "flex" }}>
+      <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
         <Form
           form={form}
           preserve={true}
@@ -127,11 +126,10 @@ const Curd = (props) => {
           <Form.Item
             label="昵称"
             name="nikename"
-            
             rules={[
               {
                 required: true,
-                message: "昵称为必传参数",
+                message: '昵称为必传参数',
               },
             ]}
           >
