@@ -1,5 +1,5 @@
 import "./index.less"; //引入全局主题
-
+import React from "react";
 import zhCN from "antd/es/locale/zh_CN";
 import moment from "moment";
 import "moment/locale/zh-cn";
