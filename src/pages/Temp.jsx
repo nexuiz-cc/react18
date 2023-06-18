@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { SearchOutlined } from "@ant-design/icons";
 import React from "react";
 import { Button, Input, Space, Table, Form, Modal } from "antd";
@@ -186,6 +187,7 @@ const Temp = (props) => {
       dataIndex: "name",
       key: "name",
       width: "14%",
+
       ...getColumnSearchProps("name"),
     },
     {
@@ -193,14 +195,17 @@ const Temp = (props) => {
       dataIndex: "country",
       key: "country",
       width: "15%",
+   
       ...getColumnSearchProps("age"),
     },
     {
       title: "Tel",
       dataIndex: "tel",
+      required:true,
       key: "tel",
       ...getColumnSearchProps("tel"),
       width: "20%",
+     
     },
     {
       title: "Address",
@@ -208,9 +213,12 @@ const Temp = (props) => {
       key: "address",
       ...getColumnSearchProps("address"),
       width: "20%",
+  
     },
     {
-      render: (text, record, index) => (
+      title: "Actions",
+      align: 'center',
+      render: (text,record, index) => (
         <Space>
           <Button type="primary" onClick={() => select(index)}>
             Change
@@ -237,16 +245,18 @@ const Temp = (props) => {
     setIsModalOpen(false);
   };
 
-  <Space direction="vertical" size="middle" style={{ display: "flex" }}>
-    <Table dataSource={data} columns={columns} rowKey={(record) => record.id} />
-  </Space>;
   return (
     <>
       <h3>TO-DO-LIST|curd</h3>
-
-      <Button type="primary" onClick={showModal}>
-        ADD DATA
+      <Button type="primary" className="addbtn" onClick={showModal}>
+        Click here to add data.
       </Button>
+      <Table
+        dataSource={data}
+        columns={columns}
+        rowKey={(record) => record.id}
+        size="small"
+      />
       <Modal
         open={isModalOpen}
         onOk={add}
@@ -267,7 +277,10 @@ const Temp = (props) => {
                 <div class="divTableCell">
                   <Form.Item
                     name="name"
-                    rules={[{ required: true, message: "Name is required." }]}
+                    rules={[{ required: true,message:'Name is required.'},{
+                    pattern:/^[a-zA-Z]+ [a-zA-Z]+$/,message:'Invalid name given.'
+                    }
+                    ]}
                   >
                     <Input placeholder="Enter your name" className="ipt" />
                   </Form.Item>
@@ -293,9 +306,12 @@ const Temp = (props) => {
                   {" "}
                   <Form.Item
                     name="tel"
-                    rules={[
-                      { required: true, message: "Phone Number is required." },
-                    ]}
+                    rules={
+                      [
+                        { required: true, message: "070|080|090-xxxx-xxxx is required."
+                         },{ pattern: /^(070|080|090)-\d{4}-\d{4}$/,message:"Tel start with 070|080|090."}
+                      ]
+                    }
                   >
                     <Input placeholder="Enter your tel" className="ipt2" />
                   </Form.Item>
@@ -328,7 +344,6 @@ const Temp = (props) => {
         size="middle"
         style={{ display: "flex" }}
       ></Space>
-      <Table columns={columns} dataSource={data} />
 
       {isCheckFrame && (
         <Modal
@@ -387,12 +402,15 @@ const Temp = (props) => {
                   type="text"
                   className="modalIpt"
                   onChange={(ev) => setCheckAddress(ev.target.value)}
-            
                   placeholder={checkAddress}
                 />
-                 <Button type="primary"  className="confirmnewbtn" onClick={check}>
-                 Confirm
-          </Button>
+                <Button
+                  type="primary"
+                  className="confirmnewbtn"
+                  onClick={check}
+                >
+                  Confirm
+                </Button>
               </td>
             </tr>
           </table>

@@ -90,14 +90,12 @@ div.gry {
 
 .ant-table-thead .ant-table-cell {
   background-color: #30a2ff !important;
-  font-family: "Calling code", Courier, monospace;
-  font-size: 12px;
+  align-content: center;
 }
 .ant-table-content {
   background-color: #ecf9ff;
-  font-family: "Calling code", Courier, monospace;
-  font-size: 12px;
 }
+
 /* DivTable.com */
 .divTable {
   display: table;
@@ -126,3 +124,13 @@ div.gry {
 .confirmtable {
   margin-bottom: 60px;
 }
+
+.addbtn{
+  display: flex;
+  margin-bottom: 15px;
+  background-color: #F86F03;
+}
+.addbtn:hover{
+  background-color: #FFA41B!important;
+}
+
