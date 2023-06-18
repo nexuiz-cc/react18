@@ -1,70 +1,128 @@
+@mixin confirm($left) {
+  display: flex;
+  position: absolute;
+  margin-bottom: 10px;
+  width: 75px;
+  margin-left: $left;
+  justify-content: center;
+  text-align: center;
+  padding-top: 2.5px;
+  font-size: 14px;
+  height: 30px;
+}
+.confirmnewbtn {
+  @include confirm(65px);
+  top: 200px;
+}
+.confirmbtn {
+  @include confirm(360px);
+  top: 250px;
+}
 
+.okbtn {
+  display: none;
+}
 
-table.gry {
-  width: 900px;
+@mixin cancel($top, $right) {
+  display: flex;
+  top: $top;
+  position: absolute;
+  right: $right;
+  font-size: 14px;
+  padding-top: 2.5px;
+  height: 30px;
+}
+.cancelnewbtn {
+  @include cancel(200px, 35px);
+}
+
+.cancelbtn {
+  @include cancel(250px, 50px);
+}
+
+.modalIpt {
+  color: rgb(6, 29, 231);
+  width: 220px;
+  height: 25px;
+}
+.modalIpt:focus {
+  outline: none;
+}
+.modalIpt::placeholder {
+  color: #e0e0e0;
+}
+
+.modaltable {
+  width: 400px;
+}
+.modaltr {
+  width: 400px;
+}
+.modalspan {
+  color: blue;
+}
+
+div.gry {
+  margin-top: 20px;
+  margin-left: 30px;
+  display: flexbox;
+  width: 500px;
+  text-align: center;
   border-collapse: collapse;
 }
-table.gry td {
-  border-top: 0.5px solid #000000;
-  border-bottom: 1px solid #000000;
-  border-left: 1px solid #000000;
-  border-right: 1px solid #000000;
-  background-color: #fff;
-  display: flex;
-  width: 225px;
-  justify-content: center;
-  padding-top: 5px;
-  height: 55px;
+.divTable.gry .divTableCell,
+.divTable.gry .divTableHead {
+  border: 1px solid #000000;
+  padding: 3px 2px;
 }
-table.gry tr {
-  background-color: #fff;
-  display: flex;
+.divTableTH {
+  padding: 3px 2px;
+  display: table-cell;
+  background-color: #e0e0e0;
+  border: 1px solid #000000;
 }
-
-table.gry th {
-  border-top:1px solid #000000;
-  border-bottom: 0.5px solid #000000;
-  border-left: 1px solid #000000;
-  border-right: 1px solid #000000;
-  background-color: #cfcfcf;
-  display: flex;
-  width: 225px;
-  justify-content: center;
+.divTable.gry .divTableBody .divTableCell {
+  font-size: 12px;
+}
+.gry .tableFootStyle {
+  font-size: 12px;
 }
 
-.confirmbtn{
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 300px;
-    width: 200px;
-    justify-content: center;
+.ant-table-thead .ant-table-cell {
+  background-color: #30a2ff !important;
+  font-family: "Calling code", Courier, monospace;
+  font-size: 12px;
+}
+.ant-table-content {
+  background-color: #ecf9ff;
+  font-family: "Calling code", Courier, monospace;
+  font-size: 12px;
+}
+/* DivTable.com */
+.divTable {
+  display: table;
+  margin-bottom: 60px;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTableHeading {
+  display: table-header-group;
+}
+.divTableCell,
+.divTableHead {
+  display: table-cell;
+}
+.divTableHeading {
+  display: table-header-group;
+}
+.divTableFoot {
+  display: table-footer-group;
+}
+.divTableBody {
+  display: table-row-group;
 }
 
-.okbtn{
- display: inline-flex;
- position: absolute;
- left: 350px;
-}
-
-.modalIpt{
-    color:rgb(6, 29, 231);
-    width: 220px;
-    height: 25px;
-}
-.modalIpt:focus{
-   outline: none;
-}
-.modalIpt::placeholder{
-    color: #e0e0e0;
-}
-
-.modaltable{
-    width: 400px;
-}
-.modaltr{
-    width: 400px;
-}
-.modalspan{
-    color: blue;
+.confirmtable {
+  margin-bottom: 60px;
 }

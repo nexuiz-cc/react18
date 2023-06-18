@@ -2,8 +2,6 @@ import React from 'react';
 import './curd.scss';
 import { useState } from 'react';
 import { Table, Input, Button, Space, Modal, Form } from 'antd';
-const { TextArea } = Input;
-
 
 const Curd = (props) => {
   const [list, setList] = useState([
