@@ -1,19 +1,18 @@
-// import { Button } from 'antd-mobile';
-// import './App.css';
-// import React, { useEffect } from 'react';
+import { useState, React } from 'react';
+import A from './views/A';
 
-// function App() {
-//   useEffect(() => {
+function App() {
+  const [bl, setBl] = useState(false);
+  const [dataApp, setDataApp] = useState('app数据');
+  return (
+    <>
+      <h3>生命周期</h3>
+      {/* <div>{dataApp}</div> */}
+      <button type="button" onClick={() => setBl(!bl)}>按钮</button>
+      <button type="button" onClick={() => setDataApp(Math.random())}>修改自身数据</button>
+      {bl && <A dataApp={dataApp} />}
+    </>
+  );
+}
 
-//   }, []);
-//   return (
-//     <div>
-//       <h3 className="title">antd-mobile</h3>
-//       <Button color="primary" fill="solid">button</Button>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import A from '../views/A';
+export default App;
