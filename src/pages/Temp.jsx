@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 import { SearchOutlined } from "@ant-design/icons";
 import React from "react";
 import { Button, Input, Space, Table, Form, Modal } from "antd";

@@ -150,7 +150,6 @@ module.exports = function (webpackEnv) {
                     "postcss-pxtorem",
                     {
                       // rootValue: 37.5,//flexible 控制下的基础字号 不使用组件库
-
                       //使用组件库 要考虑不同设计尺寸
                       rootValue({ file }) {
                         return file.indexOf("antd-mobile") !== -1 ? 37.5 : 75; // 10倍 ， 37.5是ant组件设计稿，75是设计师尺寸
