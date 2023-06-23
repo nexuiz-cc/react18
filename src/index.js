@@ -1,19 +1,13 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import AntdConfig from "./AntdConfig/AntdConfig";
-import BaseLayouts from "./layouts/BaseLayouts";
-//import DefaultLayout from "./layout/DefaultLayout"
+
+import App from "./App";
+import AntdMobileConfig from "./AntdMobileConfig";
+
 let root = createRoot(document.getElementById("root"));
 
 root.render(
-  <AntdConfig>
-    <BaseLayouts />
-  </AntdConfig>
+  <AntdMobileConfig>
+    <App />
+  </AntdMobileConfig>
 );
-
-// root.render(
-//   <DefaultLayout>
-//     <BaseLayouts />
-//   </DefaultLayout>
-// );
-
