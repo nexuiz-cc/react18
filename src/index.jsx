@@ -1,12 +1,18 @@
-/* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { withScriptjs } from 'react-google-maps';
+import Map from './Map';
+import './style.css';
 
-const root = createRoot(document.getElementById('root'));
+const App = () => {
+  const MapLoader = withScriptjs(Map);
 
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+  return (
+    <MapLoader
+      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtZxUCmNcWBhajlml7HRa-vbjwcK21Rmo"
+      loadingElement={<div style={{ height: `100%` }} />}
+    />
+  );
+};
+
+render(<App />, document.getElementById('root'));
