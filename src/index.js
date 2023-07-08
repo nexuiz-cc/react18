@@ -1,13 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
-import AntdMobileConfig from "./AntdMobileConfig";
+import Routerr from "./layout/Routerr";
 let root = createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <AntdMobileConfig>
-      <App />
-    </AntdMobileConfig>
+      <Routerr />
   </React.StrictMode>
 );
