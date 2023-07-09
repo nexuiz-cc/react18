@@ -73,10 +73,22 @@ const Routerr = () => {
 
   return (
     <div>
-      <Table 
+      <h3>提供组件</h3>
+      <Table className="table"
         rowClassName={(record, index) => index % 2 === 0 ? 'table-row-light' : 'table-row-dark'} 
         dataSource={dataSource} 
         columns={columns} />
+        <h3>结构</h3>
+        <p className="lv1">BrowserRouter|HashRouter</p>
+          <li className="lv2">Routes</li>
+            <li className="lv3">Route&nbsp;→&nbsp;layouts</li>
+            <li className="lv4">Route&nbsp;→&nbsp;pages</li>
+            <li className="lv4">Route&nbsp;→&nbsp;Navigate</li>
+            <li className="lv4">Route&nbsp;→&nbsp;404</li>
+            <li className="lv3">Route&nbsp;→&nbsp;pages</li>
+            <li className="lv3">Route&nbsp;→&nbsp;Navigate</li>
+            <li className="lv3">Route&nbsp;→&nbsp;404</li>
+            <br />
     </div>
   );
 };
