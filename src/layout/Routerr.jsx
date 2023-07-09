@@ -1,6 +1,6 @@
 import React from "react";
 import { Table } from "antd";
-import './Routerr.scss';
+import "./Routerr.scss";
 
 const Routerr = () => {
   const dataSource = [
@@ -52,7 +52,8 @@ const Routerr = () => {
     {
       key: "9",
       component: "withRouter",
-      effect: "把不是通过路由切换过来的组件中，将 history、location、match 三个对象传入props对象上",
+      effect:
+        "把不是通过路由切换过来的组件中，将 history、location、match 三个对象传入props对象上",
     },
   ];
   const columns = [
@@ -60,17 +61,24 @@ const Routerr = () => {
       title: "组件",
       dataIndex: "component",
       key: "component",
-      width:100
+      width: 100,
     },
     {
       title: "作用",
       dataIndex: "effect",
       key: "effect",
-      width:800
+      width: 800,
     },
   ];
 
-  return <div><Table dataSource={dataSource} columns={columns} />;</div>;
+  return (
+    <div>
+      <Table 
+        rowClassName={(record, index) => index % 2 === 0 ? 'table-row-light' : 'table-row-dark'} 
+        dataSource={dataSource} 
+        columns={columns} />
+    </div>
+  );
 };
 
 export default Routerr;
