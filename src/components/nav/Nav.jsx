@@ -1,4 +1,4 @@
-import "./Nav.less";
+import "./Nav.scss";
 import { NavLink } from "react-router-dom";
 const Nav = (props) => {
   return (
@@ -7,22 +7,24 @@ const Nav = (props) => {
         to="/home"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
-        首页
+        Home
       </NavLink>
+      <span className="span">  </span>
 
       <NavLink
         to="/goods"
         className={({ isActive }) => (isActive ? "active" : "")}
       >
-        商品
+        Goods
       </NavLink>
+      <span className="span">  </span>
       <NavLink
         to="/user"
         style={({ isActive }) =>
-          isActive ? { backgroundColor: "#399" } : null
+          isActive ? { backgroundColor: "rgb(205, 207, 207)" } : null
         }
       >
-        用户
+        User
       </NavLink>
     </>
   );
