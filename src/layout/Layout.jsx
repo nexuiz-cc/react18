@@ -1,10 +1,12 @@
 import Nav from "../components/nav/Nav";
-const Layout = () => {
+import { Outlet } from "react-router-dom";
+const Layout = (props) => {
   return (
     <>
       <Nav></Nav>
-      <div>内容</div>
+      <Outlet></Outlet>
     </>
   );
 };
+
 export default Layout;

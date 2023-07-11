@@ -1,45 +1,82 @@
 :where(.css-dev-only-do-not-override-12jzuas).ant-table-wrapper {
-    width: 1200px;
+  width: 1200px;
+}
+.tableRouter .table-row-light {
+  background-color: #ffeadd;
 }
 
-.table-row-light {
-    background-color: #FFEADD;
-}
-.table-row-dark {
-    background-color: #F9E0BB;
-}
-.ant-table
-  .ant-table-container
-  .ant-table-content
-  table
-  thead.ant-table-thead
-  .ant-table-cell {
-  background-color: #f3c177;
+.tableRouter .table-row-dark {
+  background-color: #f9e0bb;
 }
 
-*{
-    font-size: 20px;
-    font-family: 'Cascadia Code', '华文中宋', monospace;
-    
+.tableBrowserRouter .table-row-light,
+.tableRoute .table-row-light,
+.tableLink .table-row-light,
+.tableNavLink .table-row-light,
+.tableNavigate .table-row-light {
+  background-color: #d2e9e9;
 }
 
-.table,h3{
-    margin-left: 50px;
+.tableBrowserRouter .table-row-dark,
+.tableRoute .table-row-dark,
+.tableLink .table-row-dark,
+.tableNavLink .table-row-dark,
+.tableNavigate .table-row-dark
+ {
+  background-color: #f8f6f4;
 }
 
-.lv1{
-    margin-left: 50px;
+.tableRouter thead.ant-table-thead .ant-table-cell {
+  background-color: #f1c93b;
 }
 
-.lv2{
-    margin-left: 80px;
-    margin-top: -15px;
+.tableBrowserRouter thead.ant-table-thead .ant-table-cell,
+.tableRoute thead.ant-table-thead .ant-table-cell,
+.tableLink thead.ant-table-thead .ant-table-cell,
+.tableNavLink thead.ant-table-thead .ant-table-cell,
+.tableNavigate thead.ant-table-thead .ant-table-cell {
+  background-color: #6cdbdb;
+  color: white;
+}
+.ant-pagination {
+  display: none !important;
+}
+* {
+  font-size: 18px;
+  font-family: "Cascadia Code", "华文中宋", monospace;
 }
 
-.lv3{
-    margin-left: 110px;
+.tableRouter,
+.tableRoute,
+.tableBrowserRouter,
+.tableLink,
+.tableNavLink,
+.tableNavigate,
+h3 {
+  margin-left: 50px;
 }
 
-.lv4{
-    margin-left: 140px;
+.lv1 {
+  margin-left: 50px;
+}
+
+.lv2 {
+  margin-left: 80px;
+  margin-top: -15px;
+}
+
+.lv3 {
+  margin-left: 110px;
+}
+
+.lv4 {
+  margin-left: 140px;
+}
+
+:where(.css-dev-only-do-not-override-12jzuas).ant-table-wrapper .ant-table-thead>tr>th, 
+:where(.css-dev-only-do-not-override-12jzuas).ant-table-wrapper .ant-table-tbody>tr>th, 
+:where(.css-dev-only-do-not-override-12jzuas).ant-table-wrapper .ant-table-tbody>tr>td, 
+:where(.css-dev-only-do-not-override-12jzuas).ant-table-wrapper tfoot>tr>th, 
+:where(.css-dev-only-do-not-override-12jzuas).ant-table-wrapper tfoot>tr>td {
+    padding: 8px 8px;
 }
